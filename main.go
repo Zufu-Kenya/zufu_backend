@@ -67,6 +67,7 @@ func handleDeviceRequest(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode(errorResponse)
 	}
 }
+
 func getDeviceFromURL(url string) (Device, error) {
 	var device Device
 
@@ -85,37 +86,6 @@ func getDeviceFromURL(url string) (Device, error) {
 		return device, err
 	}
 	device.Price = price
-
-	// Add scraping for brand-specific information
-	if strings.Contains(url, "samsung") {
-		device.Brand = "Samsung"
-		device.Model = doc.Find("h1.product-details").Text()
-		device.ReleaseDate = doc.Find("div.product-essential > div > div:nth-child(1) > div > span.value").Text()
-	} else if strings.Contains(url, "haier") {
-		device.Brand = "Haier"
-		device.Model = doc.Find("div.product-title > h1").Text()
-		device.ReleaseDate = doc.Find("div.product-essential > div:nth-child(2) > div > span.value").Text()
-	} else if strings.Contains(url, "lg") {
-		device.Brand = "LG"
-		device.Model = doc.Find("h1.product-name").Text()
-		device.ReleaseDate = doc.Find("div.product-essential > div:nth-child(1) > div > span.value").Text()
-	} else if strings.Contains(url, "mika") {
-		device.Brand = "Mika"
-		device.Model = doc.Find("div.product-title > h1").Text()
-		device.ReleaseDate = doc.Find("div.product-essential > div:nth-child(2) > div > span.value").Text()
-	} else if strings.Contains(url, "hotpoint") {
-		device.Brand = "Hotpoint"
-		device.Model = doc.Find("div.product-title > h1").Text()
-		device.ReleaseDate = doc.Find("div.product-essential > div:nth-child(2) > div > span.value").Text()
-	} else if strings.Contains(url, "von") {
-		device.Brand = "Von"
-		device.Model = doc.Find("div.product-title > h1").Text()
-		device.ReleaseDate = doc.Find("div.product-essential > div:nth-child(2) > div > span.value").Text()
-	} else if strings.Contains(url, "bruhm") {
-		device.Brand = "Bruhm"
-		device.Model = doc.Find("div.product-title > h1").Text()
-		device.ReleaseDate = doc.Find("div.product-essential > div:nth-child(2) > div > span.value").Text()
-	}
 
 	return device, nil
 }
