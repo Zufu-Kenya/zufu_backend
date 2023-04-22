@@ -1,4 +1,4 @@
-package main
+package maini
 
 import (
 	"encoding/json"
@@ -155,7 +155,7 @@ func getDeviceAge(releaseDate string) (int, error) {
 }
 
 func getCurrentPrice(originalPrice float64, age int) float64 {
-	percent := 0.05 * float64(age) // 5% reduction in price for every year
+	percent := 0.5 * float64(age) // 5% reduction in price for every year
 	reduction := percent * originalPrice
 	currentPrice := originalPrice - reduction
 
