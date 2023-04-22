@@ -9,13 +9,13 @@ To use the API, make a GET request to the /device endpoint. The API will retriev
 # Query Parameters
 You can optionally include a status query parameter to specify the status of the device. If present, the status value will be included in the response.
 
-#Example Request
+### Example Request
 
 GET /device?status=available HTTP/1.1
 Host: localhost:8080
-Example Response
-css
-Copy code
+
+### Example Response
+
 HTTP/1.1 200 OK
 Content-Type: application/json
 
@@ -26,5 +26,6 @@ Content-Type: application/json
     "price": 950.0,
     "status": "AVAILABLE"
 }
-Contributing
+
+# Contributing
 This is an open project and contributions are welcome. However, please note that Zufu Kenya retains the rights of ownership and admission. If you would like to contribute, please fork the project and create a new branch for your changes. When your changes are ready, submit a pull request and they will be reviewed and merged into the main branch if approved.
