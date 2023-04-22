@@ -11,21 +11,21 @@ You can optionally include a status query parameter to specify the status of the
 
 ### Example Request
 
-GET /device?status=available HTTP/1.1
-Host: localhost:8080
+    GET /device?status=available HTTP/1.1
+    Host: localhost:8080
 
 ### Example Response
 
-HTTP/1.1 200 OK
-Content-Type: application/json
+    HTTP/1.1 200 OK
+    Content-Type: application/json
 
-{
-    "brand": "Example Brand",
-    "model": "Example Model",
-    "release_date": "2022-03-15",
-    "price": 950.0,
-    "status": "AVAILABLE"
-}
+    {
+        "brand": "Example Brand",
+        "model": "Example Model",
+        "release_date": "2022-03-15",
+        "price": 950.0,
+        "status": "AVAILABLE"
+    }
 
 # Contributing
 This is an open project and contributions are welcome. However, please note that Zufu Kenya retains the rights of ownership and admission. If you would like to contribute, please fork the project and create a new branch for your changes. When your changes are ready, submit a pull request and they will be reviewed and merged into the main branch if approved.
