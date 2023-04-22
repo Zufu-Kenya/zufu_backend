@@ -1,7 +1,7 @@
 # zufu_backend
 
 # Device Information API
-This is an ongoing project to build an API that retrieves device information from a website and calculates the current price of the device based on its release date and age. The API is built using the Go programming language.
+This is an ongoing project to build an API that retrieves device information from the web and calculates the current price of the device based on its release date and age. The API is built using the Go programming language.
 
 # Usage
 To use the API, make a GET request to the /device endpoint. The API will retrieve device information from a hardcoded website and calculate the current price based on the device's release date and age. The response will be in JSON format and include the device brand, model, release date, and current price.
